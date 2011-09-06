@@ -1,0 +1,356 @@
+object MainForm1: TMainForm1
+  Left = 226
+  Height = 374
+  Top = 24
+  Width = 521
+  Anchors = []
+  BorderStyle = bsSingle
+  Caption = 'ActGen'
+  ClientHeight = 354
+  ClientWidth = 521
+  KeyPreview = True
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  LCLVersion = '0.9.30'
+  object EditSerialAmount: TEdit
+    Left = 310
+    Height = 23
+    Top = 24
+    Width = 56
+    OnChange = EditSerialAmountChange
+    OnKeyPress = EditSerialAmountKeyPress
+    TabOrder = 0
+    Text = '1000'
+  end
+  object LabelAmountStatic: TLabel
+    Left = 32
+    Height = 16
+    Top = 24
+    Width = 111
+    Caption = 'Amount to generate:'
+    ParentColor = False
+  end
+  object LabelUniqueChars: TLabel
+    Left = 32
+    Height = 16
+    Top = 64
+    Width = 208
+    Caption = 'Amount of unique characters per code:'
+    ParentColor = False
+  end
+  object EditCharAmount: TEdit
+    Left = 310
+    Height = 23
+    Top = 64
+    Width = 56
+    OnChange = EditCharAmountChange
+    OnKeyPress = EditCharAmountKeyPress
+    TabOrder = 1
+    Text = '20'
+  end
+  object LabelDashes: TLabel
+    Left = 32
+    Height = 16
+    Top = 107
+    Width = 85
+    Caption = 'Include Dashes?'
+    ParentColor = False
+  end
+  object ButtonLoadDefaults: TButton
+    Left = 32
+    Height = 25
+    Top = 312
+    Width = 91
+    Caption = 'Load Defaults'
+    OnClick = ButtonLoadDefaultsClick
+    OnExit = ButtonLoadDefaultsExit
+    TabOrder = 3
+  end
+  object CheckBoxDashes: TCheckBox
+    Left = 310
+    Height = 19
+    Top = 104
+    Width = 20
+    Checked = True
+    OnChange = CheckBoxDashesChange
+    State = cbChecked
+    TabOrder = 2
+  end
+  object CalculateButton: TButton
+    Left = 142
+    Height = 25
+    Top = 312
+    Width = 83
+    Caption = 'Calculate!'
+    OnClick = CreateNewListClick
+    TabOrder = 5
+  end
+  object ExitAppButton: TButton
+    Left = 414
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Exit'
+    OnClick = FileExitAppClick
+    TabOrder = 6
+  end
+  object LabelAmountBetween: TLabel
+    Left = 32
+    Height = 16
+    Top = 136
+    Width = 208
+    Caption = 'Amount of Characters between dashes:'
+    ParentColor = False
+  end
+  object ComboBoxAmountDashes: TComboBox
+    Left = 310
+    Height = 23
+    Top = 136
+    Width = 48
+    ItemHeight = 15
+    ItemIndex = 3
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+    )
+    TabOrder = 4
+    Text = '4'
+  end
+  object LabelDefaultChars: TLabel
+    Left = 32
+    Height = 12
+    Top = 80
+    Width = 46
+    Caption = '(Max is 64)'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -9
+    Font.Name = 'Small Fonts'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelDefaultAmount: TLabel
+    Left = 32
+    Height = 12
+    Top = 40
+    Width = 94
+    Caption = '(Max 1,000,000 Codes)'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -9
+    Font.Name = 'Small Fonts'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Shape1: TShape
+    Left = 0
+    Height = 1
+    Top = 0
+    Width = 504
+  end
+  object ButtonConsole: TButton
+    Left = 248
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Console'
+    OnClick = ButtonConsoleClick
+    TabOrder = 7
+  end
+  object STAvoidCharacters: TStaticText
+    Left = 32
+    Height = 18
+    Top = 217
+    Width = 265
+    Caption = 'Avoid Using Characters: B 8 0 O o 1 l i ?'
+    TabOrder = 8
+  end
+  object CheckBoxAvoidChars: TCheckBox
+    Left = 312
+    Height = 19
+    Top = 216
+    Width = 20
+    Checked = True
+    OnChange = CheckBoxAvoidCharsChange
+    State = cbChecked
+    TabOrder = 9
+  end
+  object STRemoveCustomChars: TStaticText
+    Left = 32
+    Height = 17
+    Top = 242
+    Width = 265
+    Caption = 'Remove additional custom characters?'
+    TabOrder = 10
+  end
+  object CheckBoxUseCustomChars: TCheckBox
+    Left = 312
+    Height = 19
+    Top = 240
+    Width = 20
+    Enabled = False
+    OnChange = CheckBoxUseCustomCharsChange
+    TabOrder = 11
+  end
+  object CustomChars: TEdit
+    Left = 310
+    Height = 23
+    Top = 264
+    Width = 177
+    Enabled = False
+    TabOrder = 12
+  end
+  object StaticText3: TStaticText
+    Left = 310
+    Height = 11
+    Top = 288
+    Width = 92
+    Caption = '(Comma Seperated)'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -9
+    Font.Name = 'Small Fonts'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 13
+  end
+  object Shape2: TShape
+    Left = 32
+    Height = 2
+    Top = 174
+    Width = 457
+    Brush.Color = clBlack
+  end
+  object STUpperLowerCase: TStaticText
+    Left = 32
+    Height = 17
+    Top = 193
+    Width = 272
+    Caption = 'Use Upper and Lower case?'
+    TabOrder = 14
+  end
+  object CheckBoxLowerUpperCase: TCheckBox
+    Left = 312
+    Height = 19
+    Top = 191
+    Width = 20
+    TabOrder = 15
+  end
+  object MainMenu1: TMainMenu
+    left = 416
+    top = 16
+    object FileMenu: TMenuItem
+      Caption = 'File'
+      OnClick = FileMenuClick
+      object NewFile: TMenuItem
+        Caption = 'New'
+        OnClick = NewFileClick
+      end
+      object OpenFile: TMenuItem
+        Caption = 'Open'
+        OnClick = OpenFileClick
+      end
+      object OpenRecent: TMenuItem
+        Caption = 'Open Recent'
+        OnClick = OpenRecentClick
+      end
+      object Save: TMenuItem
+        Caption = 'Save'
+        OnClick = SaveClick
+      end
+      object SaveAs: TMenuItem
+        Caption = 'Save As'
+        OnClick = SaveAsClick
+      end
+      object FileClose: TMenuItem
+        Caption = 'Close'
+        OnClick = FileCloseClick
+      end
+      object FileExitApp: TMenuItem
+        Caption = 'Exit'
+        OnClick = FileExitAppClick
+      end
+    end
+    object EditMenu: TMenuItem
+      Caption = 'Edit'
+      object EditUndo: TMenuItem
+        Caption = 'Undo'
+        OnClick = EditUndoClick
+      end
+      object EditRedo: TMenuItem
+        Caption = 'Redo'
+        OnClick = EditRedoClick
+      end
+      object MenuItem16: TMenuItem
+        Caption = '-'
+      end
+      object EditCut: TMenuItem
+        Caption = 'Cut'
+        OnClick = EditCutClick
+      end
+      object EditCopy: TMenuItem
+        Caption = 'Copy'
+        OnClick = EditCopyClick
+      end
+      object EditPaste: TMenuItem
+        Caption = 'Paste'
+        OnClick = EditPasteClick
+      end
+      object MenuItem20: TMenuItem
+        Caption = '-'
+      end
+      object EditFind: TMenuItem
+        Caption = 'Find'
+        OnClick = EditFindClick
+      end
+      object EditFindNext: TMenuItem
+        Caption = 'Find Next'
+        OnClick = EditFindNextClick
+      end
+    end
+    object ToolsMenu: TMenuItem
+      Caption = 'Tools'
+      object CreateNewList: TMenuItem
+        Caption = 'Create New List'
+        OnClick = CreateNewListClick
+      end
+      object ClearCurrentList: TMenuItem
+        Caption = 'Clear Current List'
+        OnClick = ClearCurrentListClick
+      end
+    end
+    object HelpMenu: TMenuItem
+      Caption = 'Help'
+      object HelpFile1: TMenuItem
+        Caption = 'Contents'
+        OnClick = HelpFile1Click
+      end
+      object AboutBox: TMenuItem
+        Caption = 'About'
+        OnClick = AboutBoxClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.txt'
+    left = 464
+    top = 72
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = '*.txt'
+    left = 464
+    top = 16
+  end
+end
