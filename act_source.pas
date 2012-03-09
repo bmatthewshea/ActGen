@@ -207,7 +207,6 @@ end;
 
 procedure TMainForm1.ButtonLoadDefaultsClick(Sender: TObject);
 begin
-//  ShowMessage(GetSpecialFolderPath(CSIDL_PERSONAL));
 EditSerialAmount.Text:='1000';
 EditCharAmount.Text:='20';
 CheckBoxDashes.Checked:=True;
@@ -240,7 +239,6 @@ var
    filePath:=GetSpecialFolderPath(CSIDL_APPDATA)+'\'+ApplicationName+'\';
    if not DirectoryExists(filePath) then CreateDir(filePath);
    filePath:=filePath + ApplicationName + '.ini';
-//ShowMessage(filePath);
 appINI := TIniFile.Create(filePath);
  try
       sAmount:=EditSerialAmount.Text;
@@ -346,7 +344,6 @@ var
   FormSerialOutput.Caption:=FormSerialOutput.Caption + ' - Working..  Please Wait';
   FormSerialOutput.Show;
   try
-   //ShowMessage(CreateRandomCodes(sAmount, sCharAmount, sDashes, sCustomChars, bUpperLowerCase, bDashstate, bAvoidchars, bCustomchars).Text);
    FormSerialOutput.MemoOutputSerials.Lines:=CreateRandomCodes(sAmount,
                                  sCharAmount,
                                  sDashes,
@@ -476,7 +473,6 @@ end;
 
 procedure TMainForm1.ButtonShowSerialConsoleClick(Sender: TObject);
 begin
-    ShowMessage('Message Console OnClick Works.');
       FormSerialOutput.Show;
 end;
 
