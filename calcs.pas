@@ -47,8 +47,6 @@ begin
      until
      (s[i] in ['A'..'Z','a'..'z','0'..'9']);
  end else begin
-     // RemoveDefaultChars:=['B','8','0','O','o','1','l','i'];
-     // RemoveCustomChars:=[sCChars];
      for i:=1 to CharsPerCode do
      repeat
      s[i]:=chr(random(128));
@@ -132,11 +130,7 @@ begin
        showmessage(e.message);
        end;
   end;
-
-//finally
   Result:=AddToMemo;
-//  AddToMemo.Free;
- //end;
 end;
 
 end.
